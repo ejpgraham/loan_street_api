@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Loan Street's API allows you to create, load, and delete loans. Loans require the following parameters:
 
-Things you may want to cover:
+- amount: Total value of loan, in dollars and cents.
+- interest: Percent interest as a whole number with decimals.
+- monthy_payment_amount: Total amount paid every  month towards loan amount, in dollars and cents.
+- length: Length of loan, in months.
 
-* Ruby version
+To access the API, create a new instance of the client and include the API key: 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`client = LoanStreet::ApiClient.new("YOUR_API_KEY")`
+`client.create_loan({amount: 50000, interest: 12.54, length: 48, monthly_payment_amount: 2000.25})`
